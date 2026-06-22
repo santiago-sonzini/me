@@ -199,6 +199,11 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink);
   display: block;
 }
+/* so % transform-origin resolves to each circle's own centre, not the viewBox */
+.hero__mark svg circle {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
 
 /* r = 82  ->  circumference ≈ 515.22 */
 .hm-ring {
@@ -302,6 +307,25 @@ a { color: inherit; text-decoration: none; }
   opacity: 0;
   animation: rise 1s var(--ease) .95s forwards;
 }
+/* hero name: per-letter reveal (blur + rise, staggered) */
+.hero__statement h1.name-reveal {
+  opacity: 1;
+  animation: none;
+}
+.name-word { display: inline-block; white-space: nowrap; }
+.name-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.5em);
+  filter: blur(8px);
+  animation: name-in 0.85s var(--ease) both;
+  animation-delay: calc(0.45s + var(--i) * 0.05s);
+  will-change: transform, opacity, filter;
+}
+@keyframes name-in {
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+
 .hero__scroll {
   display: inline-flex;
   align-items: center;
@@ -418,22 +442,47 @@ a { color: inherit; text-decoration: none; }
   transform: translate(-8px, 0) rotate(-45deg);
   transition: opacity .4s var(--ease), transform .5s var(--ease);
 }
-a.proj__title { position: relative; }
-a.proj__title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.04em;
-  width: 100%;
-  height: 2px;
-  background: var(--ink);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .55s var(--ease);
-}
 a.proj__title:hover { transform: translateX(8px); }
-a.proj__title:hover::after { transform: scaleX(1); }
 a.proj__title:hover .arrow { opacity: 1; transform: translate(0,0) rotate(-45deg); }
+
+/* logo-themed link mark: a tiny ring + dot that draws on hover */
+.linkmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.62em;
+  height: 0.62em;
+  margin-left: 0.22em;
+  flex: none;
+  opacity: 0;
+  transform: scale(.4);
+  transition: opacity .4s var(--ease), transform .55s var(--ease);
+}
+.linkmark svg { width: 100%; height: 100%; display: block; overflow: visible; color: currentColor; }
+.linkmark .lm-ring {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-dasharray: 59.7;          /* 2π·9.5 */
+  stroke-dashoffset: 59.7;
+  transform: rotate(-90deg);
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset .6s var(--ease);
+}
+.linkmark .lm-dot {
+  fill: currentColor;
+  transform: scale(0);
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  transition: transform .4s var(--ease) .16s;
+}
+a.proj__title:hover .linkmark,
+.contact-row:hover .linkmark { opacity: 1; transform: scale(1); }
+a.proj__title:hover .lm-ring,
+.contact-row:hover .lm-ring { stroke-dashoffset: 0; }
+a.proj__title:hover .lm-dot,
+.contact-row:hover .lm-dot { transform: scale(1); }
 
 .proj__desc {
   font-size: 1.02rem;

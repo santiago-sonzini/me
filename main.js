@@ -54,6 +54,52 @@ function initLinkRoll() {
   });
 }
 
+// ---------- hero name: a staggered, per-letter reveal ----------
+function initNameReveal() {
+  const el = document.getElementById("hero-name");
+  if (!el || reduceMotion) return; // reduced motion keeps the plain name
+  const text = el.textContent.trim();
+  el.setAttribute("aria-label", text);
+  el.textContent = "";
+  let i = 0;
+  const words = text.split(" ");
+  words.forEach((word, wi) => {
+    const wspan = document.createElement("span");
+    wspan.className = "name-word";
+    wspan.setAttribute("aria-hidden", "true");
+    for (const ch of word) {
+      const s = document.createElement("span");
+      s.className = "name-char";
+      s.style.setProperty("--i", i);
+      s.textContent = ch;
+      wspan.appendChild(s);
+      i++;
+    }
+    el.appendChild(wspan);
+    if (wi < words.length - 1) el.appendChild(document.createTextNode(" "));
+  });
+}
+
+// ---------- logo-themed link marks ----------
+// Swap the trailing "↗" on links for a tiny aion mark (ring + dot) that
+// draws itself on hover — the same gesture as the hero mark.
+function initLogoLinks() {
+  const MARK =
+    '<svg viewBox="0 0 24 24">' +
+    '<circle class="lm-ring" cx="12" cy="12" r="9.5"></circle>' +
+    '<circle class="lm-dot" cx="12" cy="12" r="3.2"></circle>' +
+    "</svg>";
+  document
+    .querySelectorAll("a.proj__title .arrow, .contact-row .arrow")
+    .forEach((el) => {
+      const m = document.createElement("span");
+      m.className = "linkmark";
+      m.setAttribute("aria-hidden", "true");
+      m.innerHTML = MARK;
+      el.replaceWith(m);
+    });
+}
+
 // ---------- subtle parallax on the hero mark ----------
 function initHeroParallax() {
   const mark = document.getElementById("hero-mark");
@@ -195,5 +241,7 @@ function initBackground() {
 initReveal();
 initNav();
 initLinkRoll();
+initLogoLinks();
+initNameReveal();
 initHeroParallax();
 initBackground();
