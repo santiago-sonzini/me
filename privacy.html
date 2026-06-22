@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy · aion</title>
+  <meta name="description" content="Privacy Policy for the aion app. aion is private by default: it does not collect, store, or transmit your personal data." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%231b1814' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='9' fill='%231b1814'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- site-wide caustic / wave field (the unconscious sea) -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- NAV -->
+  <header class="nav scrolled" id="nav">
+    <a class="nav__brand" href="index.html" aria-label="aion home">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+        <circle class="ring" cx="50" cy="50" r="40" stroke-width="5" />
+        <circle cx="50" cy="50" r="9" fill="currentColor" />
+      </svg>
+      <b>aion</b>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="doc">
+    <div class="wrap">
+      <header class="doc__head">
+        <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="ring" cx="50" cy="50" r="40" stroke-width="4" />
+          <circle cx="50" cy="50" r="9" fill="currentColor" />
+        </svg>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Aion · Last updated June 22, 2026</p>
+      </header>
+
+      <article class="prose">
+        <p class="lede">
+          Aion is built to keep your attention, and your data, to yourself.
+        </p>
+
+        <h2>The short version</h2>
+        <p>
+          Aion does <strong>not</strong> collect, transmit, sell, or share any
+          personal data. There is no account, no analytics, no advertising, and no
+          tracking. The app makes <strong>no network requests</strong>. Everything
+          you create stays on your device.
+        </p>
+
+        <h2>What Aion stores, and where</h2>
+        <ul>
+          <li>
+            <strong>Your areas, projects, and focus sessions</strong> (including
+            intentions, durations, and reflection ratings) are saved locally in an
+            on-device App Group container so the app and its widgets can share them.
+            They never leave your device unless you choose to export them.
+          </li>
+          <li>
+            <strong>Preferences</strong> (theme, style, daily goal) are stored in
+            local device settings.
+          </li>
+        </ul>
+
+        <h2>Notifications</h2>
+        <p>
+          Aion uses <strong>local notifications only</strong>, for project-deadline
+          reminders and an optional daily-goal nudge. These are scheduled on your
+          device. No push server is involved and no notification data is sent
+          anywhere.
+        </p>
+
+        <h2>Live Activity &amp; widgets</h2>
+        <p>
+          The Lock Screen / Dynamic Island Live Activity and the Home Screen widgets
+          render from the same on-device data. They do not communicate with any
+          server.
+        </p>
+
+        <h2>Exporting your data (CSV)</h2>
+        <p>
+          You can export your areas and sessions as a CSV file from Settings. This is
+          fully under your control: the file is created on demand and shared only via
+          the destination <strong>you</strong> pick in the system share sheet. Aion
+          never uploads it anywhere on its own.
+        </p>
+
+        <h2>Children</h2>
+        <p>
+          Aion is rated 4+ and is safe for all ages. It collects no data from anyone,
+          including children.
+        </p>
+
+        <h2>Changes</h2>
+        <p>
+          If this policy ever changes, the updated version will be posted at this URL
+          with a new “last updated” date.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          Questions about privacy? Email the developer, Santiago Sonzini, at
+          <a href="mailto:santisonzini1234@gmail.com">santisonzini1234@gmail.com</a>.
+        </p>
+
+        <a class="back" href="index.html">Back to aion</a>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <span class="footer__brand">
+          <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+            <circle class="ring" cx="50" cy="50" r="40" stroke-width="5" />
+            <circle cx="50" cy="50" r="9" fill="currentColor" />
+          </svg>
+          aion
+        </span>
+        <nav class="footer__links">
+          <a href="index.html#work">Work</a>
+          <a href="index.html#about">About</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <p class="footer__base">© 2026 Santiago Sonzini · aion. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- three.js (classic global build) + the wave field -->
+  <script src="https://unpkg.com/three@0.136.0/build/three.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

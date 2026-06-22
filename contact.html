@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact · aion</title>
+  <meta name="description" content="Get in touch with Santiago Sonzini. WhatsApp or email." />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%231b1814' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='9' fill='%231b1814'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- site-wide caustic / wave field (the unconscious sea) -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- NAV -->
+  <header class="nav scrolled" id="nav">
+    <a class="nav__brand" href="index.html" aria-label="aion home">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+        <circle class="ring" cx="50" cy="50" r="40" stroke-width="5" />
+        <circle cx="50" cy="50" r="9" fill="currentColor" />
+      </svg>
+      <b>aion</b>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="doc">
+    <div class="wrap">
+      <header class="doc__head">
+        <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="ring" cx="50" cy="50" r="40" stroke-width="4" />
+          <circle cx="50" cy="50" r="9" fill="currentColor" />
+        </svg>
+        <h1>Contact</h1>
+        <p class="meta">Have something in mind? Let’s talk.</p>
+      </header>
+
+      <div class="contact-list">
+        <a class="contact-row" href="https://wa.me/5493535189997?text=Hola%20Santiago" target="_blank" rel="noopener">
+          <span class="contact-row__label">WhatsApp</span>
+          <span class="contact-row__value">+54 353 518 9997 <span class="arrow">↗</span></span>
+        </a>
+        <a class="contact-row" href="mailto:santisonzini1234@gmail.com">
+          <span class="contact-row__label">Email</span>
+          <span class="contact-row__value">santisonzini1234@gmail.com <span class="arrow">↗</span></span>
+        </a>
+      </div>
+
+      <a class="back" href="index.html">Back to aion</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <span class="footer__brand">
+          <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+            <circle class="ring" cx="50" cy="50" r="40" stroke-width="5" />
+            <circle cx="50" cy="50" r="9" fill="currentColor" />
+          </svg>
+          aion
+        </span>
+        <nav class="footer__links">
+          <a href="index.html#work">Work</a>
+          <a href="index.html#about">About</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <p class="footer__base">© 2026 Santiago Sonzini · aion. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- three.js (classic global build) + the wave field -->
+  <script src="https://unpkg.com/three@0.136.0/build/three.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
