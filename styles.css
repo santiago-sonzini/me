@@ -752,3 +752,59 @@ a.proj__title:hover .lm-dot,
   [data-reveal] { opacity: 1; transform: none; }
   .hero__wordmark, .hero__statement .kicker, .hero__statement h1, .hero__scroll { opacity: 1; animation: none; }
 }
+
+/* Personal identity, keeping the original Aion visual language and motion. */
+body { isolation: isolate; }
+.hero { min-height: 100vh; min-height: 100svh; }
+.hero__foot { grid-row: 2; }
+.hero__statement { max-width: 44ch; }
+.hero__statement h1 { font-size: clamp(2.4rem, 5.2vw, 4.3rem); }
+.hero__statement .kicker { margin: 0 0 1rem; }
+.hero__wordmark { font-size: clamp(1.05rem, 2.4vw, 1.5rem); letter-spacing: .24em; text-indent: .24em; }
+.hero__mark svg { width: min(38vmin, 320px); }
+.hero__caption { transform: translate(-50%, calc(min(20vmin, 170px) + 1.4rem)); }
+.personal-profile { padding-top: 2.5rem; }
+.profile-stack { margin: 0; display: grid; gap: 1.6rem; }
+.profile-stack dt { font-size: .68rem; text-transform: uppercase; letter-spacing: .16em; color: var(--ink-soft); }
+.profile-stack dd { margin: .4rem 0 0; font-size: .9rem; }
+.proj__main h3 { margin: 0; font-weight: 300; }
+.proj__tags { color: var(--ink-soft); }
+.proj__links a { overflow-wrap: anywhere; }
+.personal-brand { letter-spacing: -.02em; text-indent: 0; }
+#invitations { scroll-margin-top: 92px; }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; }
+a.proj__title:focus-visible .linkmark, .contact-row:focus-visible .linkmark { opacity: 1; transform: scale(1); }
+a.proj__title:focus-visible .lm-ring, .contact-row:focus-visible .lm-ring { stroke-dashoffset: 0; }
+a.proj__title:focus-visible .lm-dot, .contact-row:focus-visible .lm-dot { transform: scale(1); }
+.skip-link { position: fixed; top: 12px; left: 12px; z-index: 30; padding: .7rem 1rem; background: var(--ink); color: var(--paper); transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
+@media (max-width: 820px) {
+  .personal-profile { gap: 1.8rem; }
+  .profile-stack { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .profile-stack dd { font-size: .8rem; }
+  .hero__caption { transform: translate(-50%, calc(min(20vmin, 170px) + 1.4rem)); }
+  .hero__statement h1 { font-size: clamp(2.3rem, 7vw, 3.8rem); }
+  .hero__mark { bottom: 15%; }
+  .hero__caption { top: 42.5%; }
+}
+@media (max-width: 520px) {
+  .nav__brand b { display: inline; font-size: .74rem; max-width: 8ch; line-height: 1.25; }
+  .nav__links { gap: .8rem; }
+  .nav__links a { font-size: .62rem; letter-spacing: .08em; }
+  .hero__mark svg { width: min(53vw, 230px); }
+  .hero__caption { transform: translate(-50%, calc(min(27vw, 116px) + 1.6rem)); white-space: nowrap; }
+  .section-head { align-items: start; }
+  .section-head .kicker { font-size: .6rem; letter-spacing: .1em; text-align: right; max-width: 16ch; }
+  .profile-stack { grid-template-columns: 1fr; gap: 1.3rem; }
+  .contact-row__value { font-size: clamp(1rem, 4.8vw, 1.5rem); overflow-wrap: anywhere; }
+  .contact-row__value .linkmark { flex: none; }
+}
+@media (max-height: 560px) and (min-width: 600px) {
+  .hero { min-height: 660px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hm-ring { stroke-dashoffset: 0; }
+  .hm-dot { transform: scale(1); }
+  .hm-wave, .hm-tracer { display: none; }
+  .js [data-reveal] { opacity: 1; transform: none; }
+}

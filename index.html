@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>aion · Santiago Sonzini</title>
-  <meta name="description" content="Santiago Sonzini. Selected work: Aion, Silt, Androled." />
+  <title>Santiago Sonzini · Backend &amp; Data</title>
+  <meta name="description" content="Santiago Sonzini. Backend, datos y productos digitales. Imán Club, Hermes, Nomos Delta, Sanigas, Androled, Silt, Aion e invitaciones." />
   <meta name="author" content="Santiago Sonzini" />
 
   <!-- open graph -->
-  <meta property="og:title" content="aion · Santiago Sonzini" />
-  <meta property="og:description" content="Santiago Sonzini." />
+  <meta property="og:title" content="Santiago Sonzini · Backend &amp; Data" />
+  <meta property="og:description" content="Backend, datos y productos digitales. Proyectos de Santiago Sonzini." />
   <meta property="og:type" content="website" />
 
   <!-- favicon: the mark -->
@@ -19,40 +19,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 
-  <!-- progressive enhancement: only hide-for-reveal once we know JS runs -->
-  <script>document.documentElement.className = "js";</script>
 
   <link rel="stylesheet" href="styles.css" />
 
   <!-- three.js as a classic global build so the page works even when opened
        directly from disk (file://), where ES modules are blocked by CORS -->
-  <script src="https://unpkg.com/three@0.136.0/build/three.min.js"></script>
+  <script defer src="https://unpkg.com/three@0.136.0/build/three.min.js"></script>
+  <script defer src="main.js"></script>
 </head>
 <body>
-
-  <!-- site-wide caustic / wave field (the unconscious sea) -->
+  <a class="skip-link" href="#about">Saltar al contenido</a>
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
-
-  <!-- NAV -->
   <header class="nav" id="nav">
-    <a class="nav__brand" href="#top" aria-label="aion home">
-      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
-        <circle class="ring" cx="50" cy="50" r="40" stroke-width="5" />
-        <circle cx="50" cy="50" r="9" fill="currentColor" />
-      </svg>
-      <b>aion</b>
-    </a>
-    <nav class="nav__links">
-      <a href="#work">Work</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <a class="nav__brand" href="#top" aria-label="Santiago Sonzini, inicio"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><circle class="ring" cx="50" cy="50" r="40" stroke-width="5"/><circle cx="50" cy="50" r="9" fill="currentColor"/></svg><b>Santiago Sonzini</b></a>
+    <nav class="nav__links" aria-label="Navegación principal"><a href="#about">Perfil</a><a href="#work">Proyectos</a><a href="contact.html">Contacto</a></nav>
   </header>
-
-  <!-- HERO -->
   <main id="top">
-    <section class="hero" id="hero">
-      <!-- the mark draws itself on, then breathes; ripples emanate from the centre -->
+    <section class="hero" id="hero" aria-labelledby="hero-name">
       <div class="hero__mark" id="hero-mark" aria-hidden="true">
         <svg viewBox="-100 -100 200 200">
           <circle class="hm-wave" cx="0" cy="0" r="82" />
@@ -62,118 +45,77 @@
           <circle class="hm-dot" cx="0" cy="0" r="15" />
         </svg>
       </div>
-
-      <div class="hero__caption">
-        <p class="hero__wordmark">aion</p>
-      </div>
-
+      <div class="hero__caption"><p class="hero__wordmark">backend &amp; data</p></div>
       <div class="hero__foot wrap">
-        <div class="hero__statement">
-          <h1 class="name-reveal" id="hero-name">Santiago Sonzini</h1>
-        </div>
-        <a class="hero__scroll" href="#work">
-          <span>Selected work</span>
-          <span class="bar"></span>
-        </a>
+        <div class="hero__statement"><p class="kicker">Desarrollo de software</p><h1 class="name-reveal" id="hero-name">Santiago Sonzini</h1></div>
+        <a class="hero__scroll" href="#work"><span>Explorar proyectos</span><span class="bar"></span></a>
       </div>
     </section>
-
-    <!-- WORK -->
-    <section class="work" id="work">
+    <section class="about" id="about" aria-labelledby="about-title">
       <div class="wrap">
-        <div class="section-head" data-reveal>
-          <h2>Selected work</h2>
-          <span class="kicker">003 · 2026</span>
+        <div class="section-head" data-reveal><h2 id="about-title">Perfil</h2><span class="kicker">Backend · Data · Producto</span></div>
+        <div class="about__grid personal-profile" data-reveal>
+          <span class="proj__idx">01</span>
+          <div class="about__body"><p>Construyo productos desde lo que los sostiene: <em>la lógica y los datos.</em></p><p class="small">Desarrollo de software con foco en backend, modelado de datos e integración de servicios. De la lógica del negocio a la experiencia de quien lo usa.</p></div>
+          <dl class="profile-stack"><div><dt>Backend &amp; datos</dt><dd>tRPC · Prisma · Supabase</dd></div><div><dt>Web &amp; nativo</dt><dd>Next.js · Swift · SwiftUI</dd></div><div><dt>Enfoque</dt><dd>Sistemas, automatización y producto.</dd></div></dl>
         </div>
-
-        <!-- 01 Aion -->
+      </div>
+    </section>
+    <section class="work" id="work" aria-labelledby="work-title"><div class="wrap">
+        <div class="section-head" data-reveal><h2 id="work-title">Proyectos seleccionados</h2><span class="kicker">007 · Software</span></div>
         <article class="proj" data-reveal>
           <span class="proj__idx">01</span>
-          <div class="proj__main">
-            <h3 class="proj__title">Aion</h3>
-            <p class="proj__desc">
-              A calm instrument for deep, intentional work. Name what “done” looks
-              like, seal the world away with one tap, and watch a living portrait of
-              your devotion take shape across the areas of a life. Native on iPhone,
-              iPad and Mac, with Home Screen widgets and a Lock Screen Live Activity.
-              Everything stays on your device.
-            </p>
-          </div>
-          <div class="proj__meta">
-            <span class="proj__tags">Swift · SwiftUI · iOS / iPadOS / Mac · Metal</span>
-            <span class="proj__links">
-              <a href="privacy.html">Privacy</a>
-              <span class="muted">Coming to the App Store</span>
-            </span>
-          </div>
+          <div class="proj__main"><h3><a class="proj__title" href="https://iman.ar/club" target="_blank" rel="noopener noreferrer">Imán Club <span class="arrow" aria-hidden="true">↗</span></a></h3><p class="proj__desc">Fidelización para negocios locales. Clientes, campañas segmentadas y referidos medibles en una misma plataforma.</p></div>
+          <div class="proj__meta"><span class="proj__tags">CRM · Segmentación · Fidelización</span><span class="proj__links"><a href="https://iman.ar/club" target="_blank" rel="noopener noreferrer">iman.ar/club</a></span></div>
         </article>
-
-        <!-- 02 Silt -->
         <article class="proj" data-reveal>
           <span class="proj__idx">02</span>
-          <div class="proj__main">
-            <a class="proj__title" href="https://silt.ink" target="_blank" rel="noopener">
-              Silt <span class="arrow">↗</span>
-            </a>
-            <p class="proj__desc">
-              A focused reader for essays and long-form fiction. Distraction-free,
-              private by design, and native across iOS and Mac. Your library stays
-              yours, end to end.
-            </p>
-          </div>
-          <div class="proj__meta">
-            <span class="proj__tags">Next.js · iOS / Mac · Supabase · tRPC</span>
-            <span class="proj__links">
-              <a href="https://silt.ink" target="_blank" rel="noopener">silt.ink</a>
-            </span>
-          </div>
+          <div class="proj__main"><h3><a class="proj__title" href="https://hermes-hk.vercel.app/" target="_blank" rel="noopener noreferrer">Hermes <span class="arrow" aria-hidden="true">↗</span></a></h3><p class="proj__desc">Protocolo de comunicación entre agentes para comercio B2B. Contexto, negociación y coordinación de operaciones mayoristas.</p></div>
+          <div class="proj__meta"><span class="proj__tags">Agentes · Automatización · B2B</span><span class="proj__links"><a href="https://hermes-hk.vercel.app/" target="_blank" rel="noopener noreferrer">hermes-hk.vercel.app</a></span></div>
         </article>
-
-        <!-- 03 Androled -->
         <article class="proj" data-reveal>
           <span class="proj__idx">03</span>
-          <div class="proj__main">
-            <a class="proj__title" href="https://androled.com" target="_blank" rel="noopener">
-              Androled <span class="arrow">↗</span>
-            </a>
-            <p class="proj__desc">
-              LED wristbands for live events. Synchronized light shows for crowds,
-              plus the full platform to design, run and manage them from a single
-              control room.
-            </p>
-          </div>
-          <div class="proj__meta">
-            <span class="proj__tags">Next.js · tRPC · Prisma · Tailwind</span>
-            <span class="proj__links">
-              <a href="https://androled.com" target="_blank" rel="noopener">androled.com</a>
-            </span>
-          </div>
+          <div class="proj__main"><h3><a class="proj__title" href="https://www.nomosdelta.xyz/" target="_blank" rel="noopener noreferrer">Nomos Delta <span class="arrow" aria-hidden="true">↗</span></a></h3><p class="proj__desc">Gestión para transportistas. Seguimiento de pedidos por etapas, notificaciones automáticas y una vista centralizada de la operación.</p></div>
+          <div class="proj__meta"><span class="proj__tags">Logística · Trazabilidad · Automatización</span><span class="proj__links"><a href="https://www.nomosdelta.xyz/" target="_blank" rel="noopener noreferrer">nomosdelta.xyz</a></span></div>
         </article>
-      </div>
-    </section>
+        <article class="proj" data-reveal>
+          <span class="proj__idx">04</span>
+          <div class="proj__main"><h3><a class="proj__title" href="https://www.sanigas.store/catalogo" target="_blank" rel="noopener noreferrer">Sanigas <span class="arrow" aria-hidden="true">↗</span></a></h3><p class="proj__desc">Catálogo digital mayorista. Productos, categorías y búsqueda por código para simplificar la consulta comercial.</p></div>
+          <div class="proj__meta"><span class="proj__tags">Catálogo · Datos de producto · Comercio</span><span class="proj__links"><a href="https://www.sanigas.store/catalogo" target="_blank" rel="noopener noreferrer">sanigas.store/catalogo</a></span></div>
+        </article>
+        <article class="proj" data-reveal>
+          <span class="proj__idx">05</span>
+          <div class="proj__main"><h3><a class="proj__title" href="https://androled.com" target="_blank" rel="noopener noreferrer">Androled <span class="arrow" aria-hidden="true">↗</span></a></h3><p class="proj__desc">Pulseras LED para eventos y una plataforma para diseñar, controlar y gestionar experiencias de iluminación sincronizada.</p></div>
+          <div class="proj__meta"><span class="proj__tags">Next.js · tRPC · Prisma · Tailwind</span><span class="proj__links"><a href="https://androled.com" target="_blank" rel="noopener noreferrer">androled.com</a></span></div>
+        </article>
+        <article class="proj" data-reveal>
+          <span class="proj__idx">06</span>
+          <div class="proj__main"><h3><a class="proj__title" href="https://silt.ink" target="_blank" rel="noopener noreferrer">Silt <span class="arrow" aria-hidden="true">↗</span></a></h3><p class="proj__desc">Un espacio para leer sin distracciones. Biblioteca personal y una experiencia nativa en iOS y Mac.</p></div>
+          <div class="proj__meta"><span class="proj__tags">Next.js · Supabase · tRPC · iOS / Mac</span><span class="proj__links"><a href="https://silt.ink" target="_blank" rel="noopener noreferrer">silt.ink</a></span></div>
+        </article>
+        <article class="proj" data-reveal>
+          <span class="proj__idx">07</span>
+          <div class="proj__main"><h3><span class="proj__title">Aion</span></h3><p class="proj__desc">Una app para trabajar con intención. Sesiones de foco, widgets y una experiencia nativa en iPhone, iPad y Mac. Los datos se quedan en tu dispositivo.</p></div>
+          <div class="proj__meta"><span class="proj__tags">Swift · SwiftUI · Metal</span><span class="proj__links"><a href="privacy.html">Privacidad de Aion</a></span></div>
+        </article>
+    </div></section>
+    <section class="work invitations" id="invitations" aria-labelledby="invitations-title"><div class="wrap">
+        <div class="section-head" data-reveal><h2 id="invitations-title">Invitaciones</h2><span class="kicker">002 · Experiencias</span></div>
+        <article class="proj" data-reveal>
+          <span class="proj__idx">01</span>
+          <div class="proj__main"><h3><a class="proj__title" href="https://www.julixv.com/" target="_blank" rel="noopener noreferrer">Juli XV <span class="arrow" aria-hidden="true">↗</span></a></h3><p class="proj__desc">Una invitación digital para celebrar sus quince.</p></div>
+          <div class="proj__meta"><span class="proj__tags">Invitación · XV</span><span class="proj__links"><a href="https://www.julixv.com/" target="_blank" rel="noopener noreferrer">julixv.com</a></span></div>
+        </article>
+        <article class="proj" data-reveal>
+          <span class="proj__idx">02</span>
+          <div class="proj__main"><h3><a class="proj__title" href="https://www.mariapiaxv.com/" target="_blank" rel="noopener noreferrer">María Pía XV <span class="arrow" aria-hidden="true">↗</span></a></h3><p class="proj__desc">Un momento especial, con su propia identidad digital.</p></div>
+          <div class="proj__meta"><span class="proj__tags">Invitación · XV</span><span class="proj__links"><a href="https://www.mariapiaxv.com/" target="_blank" rel="noopener noreferrer">mariapiaxv.com</a></span></div>
+        </article>
+    </div></section>
   </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer__top">
-        <span class="footer__brand">
-          <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
-            <circle class="ring" cx="50" cy="50" r="40" stroke-width="5" />
-            <circle cx="50" cy="50" r="9" fill="currentColor" />
-          </svg>
-          aion
-        </span>
-        <nav class="footer__links">
-          <a href="#work">Work</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-      <p class="footer__base">© 2026 Santiago Sonzini · aion. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="main.js"></script>
+  <footer class="footer"><div class="wrap">
+    <div class="footer__top"><a class="footer__brand personal-brand" href="#top"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><circle class="ring" cx="50" cy="50" r="40" stroke-width="5"/><circle cx="50" cy="50" r="9" fill="currentColor"/></svg> Santiago Sonzini</a><nav class="footer__links" aria-label="Navegación del pie"><a href="#work">Proyectos</a><a href="contact.html">Contacto</a></nav></div>
+    <p class="footer__base">© 2026 Santiago Sonzini · Backend &amp; Data</p>
+  </div></footer>
 </body>
 </html>

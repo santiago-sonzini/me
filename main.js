@@ -14,6 +14,7 @@ const nav = document.getElementById("nav");
 // ---------- scroll reveal ----------
 function initReveal() {
   const items = document.querySelectorAll("[data-reveal]");
+  document.documentElement.classList.add("js");
   if (!("IntersectionObserver" in window) || reduceMotion) {
     items.forEach((el) => el.classList.add("in"));
     return;
@@ -133,7 +134,7 @@ function initHeroParallax() {
 // quaternity of sources around it, the field concentrated toward the middle.
 function initBackground() {
   const bg = document.getElementById("bg-canvas");
-  if (!bg) return;
+  if (!bg || typeof THREE === "undefined") return;
 
   let r;
   try {
